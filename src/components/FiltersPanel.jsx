@@ -1,8 +1,7 @@
-import { teamDatabase, getLeaguesByCountry, getTeamsByLeague } from '../data/teams.js';
+import { teamDatabase, getLeaguesByCountry } from '../data/teams.js';
 
 export default function FiltersPanel({ filters, onFiltersChange }) {
   const leagues = filters.country ? getLeaguesByCountry(filters.country) : [];
-  const teams = filters.league ? getTeamsByLeague(filters.country, filters.league) : [];
 
   const handleChange = (key) => (event) => {
     const value = event.target.value;
@@ -10,11 +9,6 @@ export default function FiltersPanel({ filters, onFiltersChange }) {
 
     if (key === 'country') {
       nextFilters.league = '';
-      nextFilters.team = '';
-    }
-
-    if (key === 'league') {
-      nextFilters.team = '';
     }
 
     onFiltersChange(nextFilters);
@@ -30,13 +24,13 @@ export default function FiltersPanel({ filters, onFiltersChange }) {
         <button
           type="button"
           className="text-xs uppercase tracking-widest text-gray-400 underline decoration-dotted decoration-emerald/50 hover:text-emerald"
-          onClick={() => onFiltersChange({ country: '', league: '', team: '' })}
+          onClick={() => onFiltersChange({ country: '', league: '' })}
         >
           Reset
         </button>
       </header>
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-2">
         <label className="flex flex-col gap-2 text-sm">
           <span className="text-xs font-semibold uppercase tracking-widest text-gray-400">Country</span>
           <select
@@ -65,23 +59,6 @@ export default function FiltersPanel({ filters, onFiltersChange }) {
             {leagues.map((league) => (
               <option key={league.name} value={league.name}>
                 {league.name} · {league.level}
-              </option>
-            ))}
-          </select>
-        </label>
-
-        <label className="flex flex-col gap-2 text-sm">
-          <span className="text-xs font-semibold uppercase tracking-widest text-gray-400">Preferred Club</span>
-          <select
-            value={filters.team}
-            onChange={handleChange('team')}
-            disabled={!filters.league}
-            className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-gray-100 outline-none transition focus:border-emerald focus:ring-2 focus:ring-emerald/40 disabled:cursor-not-allowed disabled:border-slate-800 disabled:text-gray-500"
-          >
-            <option value="">Surprise us</option>
-            {teams.map((team) => (
-              <option key={team} value={team}>
-                {team}
               </option>
             ))}
           </select>

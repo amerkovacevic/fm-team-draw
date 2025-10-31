@@ -8,11 +8,10 @@ import HistoryPanel from './components/HistoryPanel.jsx';
 import useAssignmentHistory from './hooks/useAssignmentHistory.js';
 import { flattenTeams } from './data/teams.js';
 
-const buildFiltersSummary = ({ country, league, team }) => {
+const buildFiltersSummary = ({ country, league }) => {
   const segments = [];
   if (country) segments.push(country);
   if (league) segments.push(league);
-  if (team) segments.push(team);
   return segments.length ? segments.join(' · ') : 'No filters';
 };
 
@@ -27,7 +26,7 @@ const generatePlayerId = () => {
 
 export default function App() {
   const [players, setPlayers] = useState([]);
-  const [filters, setFilters] = useState({ country: '', league: '', team: '' });
+  const [filters, setFilters] = useState({ country: '', league: '' });
   const [assignments, setAssignments] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -38,7 +37,6 @@ export default function App() {
     const teams = flattenTeams();
 
     return teams.filter((team) => {
-      if (filters.team && team.name !== filters.team) return false;
       if (filters.league && team.league !== filters.league) return false;
       if (filters.country && team.country !== filters.country) return false;
       return true;
@@ -82,7 +80,7 @@ export default function App() {
     const results = participants.map((player) => {
       const index = Math.floor(Math.random() * pool.length);
       const [team] = pool.splice(index, 1);
-      return { ...team, player: player.name };
+      return { ...team, team: team.name, player: player.name };
     });
 
     setAssignments(results);
@@ -130,11 +128,8 @@ export default function App() {
         <HistoryPanel history={history} source={source} />
 
         <footer className="mt-8 rounded-3xl border border-slate-900 bg-slate-900/40 p-6 text-center text-xs text-gray-500">
-          Built with love for Football Manager saves. Configure Firebase credentials in a
-          <code className="mx-1 rounded bg-slate-800 px-1 py-0.5 text-[0.7rem] text-gray-300">
-            .env.local
-          </code>
-          file to sync your draws across devices.
+          Built with love for Football Manager saves. Recent draws stay in your browser so you can revisit
+          them anytime.
         </footer>
       </div>
     </div>

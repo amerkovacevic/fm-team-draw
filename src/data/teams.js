@@ -371,12 +371,6 @@ export const getLeaguesByCountry = (country) => {
   return countryEntry ? countryEntry.leagues : [];
 };
 
-export const getTeamsByLeague = (country, league) => {
-  const leagues = getLeaguesByCountry(country);
-  const leagueEntry = leagues.find((item) => item.name === league);
-  return leagueEntry ? leagueEntry.teams : [];
-};
-
 export const flattenTeams = () =>
   teamDatabase.flatMap((country) =>
     country.leagues.flatMap((league) =>
