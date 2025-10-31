@@ -48,7 +48,7 @@ export default function FiltersPanel({ filters, onFiltersChange }) {
         </button>
       </header>
 
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,240px)_1fr]">
+      <div className="space-y-6">
         <label className="flex flex-col gap-3 text-sm">
           <span className="text-[11px] font-semibold uppercase tracking-[0.3em] text-gray-400">Country</span>
           <select
@@ -71,7 +71,7 @@ export default function FiltersPanel({ filters, onFiltersChange }) {
             {!filters.country ? (
               <p className="text-xs leading-relaxed text-gray-500">Select a country to browse its leagues.</p>
             ) : (
-              <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1">
+              <ul className="grid gap-2 sm:grid-cols-2">
                 {leagues.map((league) => {
                   const isChecked = selectedLeagues.includes(league.name);
                   return (
