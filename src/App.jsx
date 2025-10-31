@@ -155,10 +155,10 @@ export default function App() {
 
         <HistoryPanel history={history} source={source} />
 
-        <footer className="mt-8 rounded-3xl border border-slate-900 bg-slate-900/40 p-6 text-center text-xs text-gray-500">
-          Built with love for Football Manager saves. Recent draws stay in your browser so you can revisit
-          them anytime.
-        </footer>
+        
+      <footer className="border-t border-slate-800 bg-slate-900/80 py-4 text-center text-xs text-slate-500">
+        <p>&copy; {new Date().getFullYear()} Amer Kovacevic All rights reserved.</p>
+      </footer>
       </div>
     </div>
   );
