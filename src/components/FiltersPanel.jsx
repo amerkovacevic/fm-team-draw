@@ -67,7 +67,7 @@ export default function FiltersPanel({ filters, onFiltersChange }) {
 
         <div className="flex flex-col gap-3 text-sm">
           <span className="text-[11px] font-semibold uppercase tracking-[0.3em] text-gray-400">Leagues</span>
-          <div className="rounded-2xl border border-slate-700/70 bg-slate-900/70 p-4 shadow-inner shadow-black/10">
+          <div className="rounded-2xl border border-slate-700/70 bg-slate-900/70 p-3 shadow-inner shadow-black/10">
             {!filters.country ? (
               <p className="text-xs leading-relaxed text-gray-500">Select a country to browse its leagues.</p>
             ) : (
