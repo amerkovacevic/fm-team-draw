@@ -84,7 +84,7 @@ export default function FiltersPanel({ filters, onFiltersChange }) {
                           className="h-4 w-4 rounded border border-slate-600 bg-slate-900 text-emerald focus:ring-emerald"
                         />
                         <span className="flex-1 text-gray-100">{league.name}</span>
-                        <span className="text-[11px] uppercase tracking-[0.25em] text-gray-500">{league.level}</span>
+                        {/*   <span className="text-[11px] uppercase tracking-[0.25em] text-gray-500">{league.level}</span> */}
                       </label>
                     </li>
                   );
