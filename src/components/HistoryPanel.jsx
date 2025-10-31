@@ -2,12 +2,14 @@ import dayjs from 'dayjs';
 
 const formatDate = (value) => {
   if (!value) return 'moments ago';
-  const date = typeof value === 'string' ? dayjs(value) : dayjs(value.toDate?.() ?? value);
+  const date = dayjs(value);
   if (!date.isValid()) return 'moments ago';
   return date.format('MMM D • HH:mm');
 };
 
 export default function HistoryPanel({ history, source }) {
+  const storageLabel = source === 'browser' ? 'browser storage' : `${source} storage`;
+
   if (!history.length) {
     return (
       <div className="rounded-3xl border border-dashed border-slate-800 bg-slate-900/40 p-6 text-sm text-gray-400">
@@ -20,7 +22,7 @@ export default function HistoryPanel({ history, source }) {
     <section className="rounded-3xl border border-slate-800 bg-slate-900/60 p-6">
       <header className="flex items-center justify-between">
         <h2 className="font-display text-xl text-sand">Recent draws</h2>
-        <span className="text-xs uppercase tracking-[0.35em] text-gray-500">{source} storage</span>
+        <span className="text-xs uppercase tracking-[0.35em] text-gray-500">{storageLabel}</span>
       </header>
       <ul className="mt-4 space-y-3">
         {history.slice(0, 6).map((entry) => (
