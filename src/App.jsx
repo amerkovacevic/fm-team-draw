@@ -8,10 +8,11 @@ import HistoryPanel from './components/HistoryPanel.jsx';
 import useAssignmentHistory from './hooks/useAssignmentHistory.js';
 import { flattenTeams } from './data/teams.js';
 
-const buildFiltersSummary = ({ country, league }) => {
+const buildFiltersSummary = ({ country, leagues, sameLeague }) => {
   const segments = [];
   if (country) segments.push(country);
-  if (league) segments.push(league);
+  if (leagues?.length) segments.push(leagues.join(', '));
+  if (sameLeague) segments.push('Same league draw');
   return segments.length ? segments.join(' · ') : 'No filters';
 };
 
@@ -26,7 +27,7 @@ const generatePlayerId = () => {
 
 export default function App() {
   const [players, setPlayers] = useState([]);
-  const [filters, setFilters] = useState({ country: '', league: '' });
+  const [filters, setFilters] = useState({ country: '', leagues: [], sameLeague: false });
   const [assignments, setAssignments] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -37,7 +38,7 @@ export default function App() {
     const teams = flattenTeams();
 
     return teams.filter((team) => {
-      if (filters.league && team.league !== filters.league) return false;
+      if (filters.leagues?.length && !filters.leagues.includes(team.league)) return false;
       if (filters.country && team.country !== filters.country) return false;
       return true;
     });
@@ -76,7 +77,34 @@ export default function App() {
 
     setLoading(true);
 
-    const pool = [...availableTeams];
+    let pool;
+
+    if (filters.sameLeague) {
+      const leagueCandidates = filters.leagues?.length
+        ? filters.leagues
+        : Array.from(new Set(availableTeams.map((team) => team.league)));
+
+      const viableLeagues = leagueCandidates
+        .map((leagueName) => ({
+          name: leagueName,
+          teams: availableTeams.filter((team) => team.league === leagueName),
+        }))
+        .filter((entry) => entry.teams.length >= participants.length);
+
+      if (!viableLeagues.length) {
+        setError(
+          'No league has enough clubs for the number of managers. Choose different leagues or disable the single-league option.'
+        );
+        setLoading(false);
+        return;
+      }
+
+      const selectedLeague = viableLeagues[Math.floor(Math.random() * viableLeagues.length)];
+      pool = [...selectedLeague.teams];
+    } else {
+      pool = [...availableTeams];
+    }
+
     const results = participants.map((player) => {
       const index = Math.floor(Math.random() * pool.length);
       const [team] = pool.splice(index, 1);
