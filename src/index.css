@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-midnight text-gray-100 font-sans;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.pitch');
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: theme('colors.emerald');
+  border-radius: 9999px;
+}
