@@ -15,7 +15,7 @@ export default function PlayerList({ players, onRemove }) {
           className="flex items-center justify-between rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/70 to-pitch/70 px-4 py-3 text-sm"
         >
           <div>
-            <p className="font-semibold text-sand">{player.name}</p>
+            <p className="font-semibold text-white">{player.name}</p>
             <p className="text-xs text-gray-400">Ready for a new project</p>
           </div>
           <button

@@ -6,7 +6,7 @@ export default function AssignmentResults({ assignments, onRandomize, loading, c
       <header className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.35em] text-emerald">Draw</p>
-          <h2 className="font-display text-2xl text-sand">Assign clubs</h2>
+          <h2 className="font-display text-2xl text-white">Assign clubs</h2>
         </div>
         <button
           type="button"
@@ -38,7 +38,7 @@ export default function AssignmentResults({ assignments, onRandomize, loading, c
               className="rounded-2xl border border-slate-700 bg-slate-900/70 p-4 shadow-lg shadow-black/20"
             >
               <p className="text-xs uppercase tracking-[0.3em] text-emerald">{assignment.countryFlag}</p>
-              <h3 className="mt-2 font-display text-2xl text-sand">{assignment.team}</h3>
+              <h3 className="mt-2 font-display text-2xl text-white">{assignment.team}</h3>
               <p className="text-sm text-gray-300">{assignment.league}</p>
               <div className="mt-4 flex items-center justify-between text-sm">
                 <span className="text-gray-400">Manager</span>

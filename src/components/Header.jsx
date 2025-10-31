@@ -3,7 +3,7 @@ export default function Header() {
     <header className="relative overflow-hidden rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 via-pitch to-midnight p-8 shadow-glow">
       <div className="relative z-10 flex flex-col gap-3 text-center sm:text-left">
         <span className="text-sm uppercase tracking-[0.4em] text-emerald">Squad Builder</span>
-        <h1 className="font-display text-4xl tracking-wide text-sand drop-shadow sm:text-5xl">
+        <h1 className="font-display text-4xl tracking-wide text-white drop-shadow sm:text-5xl">
           Football Manager Team Draw
         </h1>
         <p className="max-w-2xl text-sm text-gray-300 sm:text-base">
