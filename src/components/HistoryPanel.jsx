@@ -21,7 +21,7 @@ export default function HistoryPanel({ history, source }) {
   return (
     <section className="rounded-3xl border border-slate-800 bg-slate-900/60 p-6">
       <header className="flex items-center justify-between">
-        <h2 className="font-display text-xl text-sand">Recent draws</h2>
+        <h2 className="font-display text-xl text-white">Recent draws</h2>
         <span className="text-xs uppercase tracking-[0.35em] text-gray-500">{storageLabel}</span>
       </header>
       <ul className="mt-4 space-y-3">
@@ -38,7 +38,7 @@ export default function HistoryPanel({ history, source }) {
               {entry.assignments?.map((assignment) => (
                 <p key={`${assignment.player}-${assignment.team}`} className="flex justify-between gap-3 text-sm">
                   <span className="text-gray-400">{assignment.player}</span>
-                  <span className="font-semibold text-sand">
+                  <span className="font-semibold text-white">
                     {assignment.team}
                     <span className="ml-2 text-xs text-gray-400">{assignment.league}</span>
                   </span>

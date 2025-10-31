@@ -37,7 +37,7 @@ export default function FiltersPanel({ filters, onFiltersChange }) {
       <header className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         <div className="space-y-1">
           <p className="text-[11px] uppercase tracking-[0.35em] text-emerald/80">Filters</p>
-          <h2 className="font-display text-2xl leading-tight text-sand">Dial in your scouting brief</h2>
+          <h2 className="font-display text-2xl leading-tight text-white">Dial in your scouting brief</h2>
         </div>
         <button
           type="button"
@@ -67,7 +67,7 @@ export default function FiltersPanel({ filters, onFiltersChange }) {
 
         <div className="flex flex-col gap-3 text-sm">
           <span className="text-[11px] font-semibold uppercase tracking-[0.3em] text-gray-400">Leagues</span>
-          <div className="rounded-2xl border border-slate-700/70 bg-slate-900/70 p-3 shadow-inner shadow-black/10">
+          <div className="rounded-2xl border border-slate-700/70 bg-slate-900/70 px-5 py-4 shadow-inner shadow-black/10">
             {!filters.country ? (
               <p className="text-xs leading-relaxed text-gray-500">Select a country to browse its leagues.</p>
             ) : (
@@ -76,7 +76,7 @@ export default function FiltersPanel({ filters, onFiltersChange }) {
                   const isChecked = selectedLeagues.includes(league.name);
                   return (
                     <li key={league.name}>
-                      <label className="flex items-center gap-4 rounded-xl border border-transparent px-3 py-2 transition hover:border-emerald/30 hover:bg-slate-800/50">
+                      <label className="flex items-center gap-4 rounded-xl border border-transparent px-4 py-3 transition hover:border-emerald/30 hover:bg-slate-800/50">
                         <input
                           type="checkbox"
                           checked={isChecked}
