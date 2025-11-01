@@ -26,12 +26,12 @@ export default function PlayerForm({ onAddPlayer }) {
           value={playerName}
           onChange={(event) => setPlayerName(event.target.value)}
           placeholder="e.g. Alex Ferguson"
-          className="w-full rounded-xl border border-slate-700 bg-pitch/80 px-4 py-3 text-sm text-gray-100 outline-none transition focus:border-emerald focus:ring-2 focus:ring-emerald/50"
+          className="w-full rounded-xl border border-slate-700 bg-pitch/80 px-4 py-3 text-sm text-gray-100 outline-none transition focus:border-azure focus:ring-2 focus:ring-azure/50"
         />
       </div>
       <button
         type="submit"
-        className="mt-2 rounded-xl bg-emerald px-6 py-3 text-sm font-semibold uppercase tracking-widest text-pitch transition hover:-translate-y-0.5 hover:shadow-glow active:translate-y-0 sm:mt-auto"
+        className="mt-2 rounded-xl bg-azure px-6 py-3 text-sm font-semibold uppercase tracking-widest text-pitch transition hover:-translate-y-0.5 hover:shadow-glow active:translate-y-0 sm:mt-auto"
       >
         Add
       </button>

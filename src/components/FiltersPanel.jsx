@@ -33,15 +33,15 @@ export default function FiltersPanel({ filters, onFiltersChange }) {
   };
 
   return (
-    <section className="flex flex-col gap-6 rounded-[28px] border border-slate-800/80 bg-gradient-to-br from-pitch/85 via-slate-900 to-slate-950/80 p-8 shadow-[0_18px_45px_-30px_rgba(16,185,129,0.55)]">
+    <section className="flex flex-col gap-6 rounded-[28px] border border-slate-800/80 bg-gradient-to-br from-pitch/85 via-slate-900 to-slate-950/80 p-8 shadow-[0_18px_45px_-30px_rgba(59,130,246,0.55)]">
       <header className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         <div className="space-y-1">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-emerald/80">Filters</p>
+          <p className="text-[11px] uppercase tracking-[0.35em] text-azure/80">Filters</p>
           <h2 className="font-display text-2xl leading-tight text-white">Dial in your scouting brief</h2>
         </div>
         <button
           type="button"
-          className="self-start rounded-full border border-transparent px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-emerald transition hover:border-emerald/50 hover:bg-emerald/10"
+          className="self-start rounded-full border border-transparent px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-azure transition hover:border-azure/50 hover:bg-azure/10"
           onClick={handleReset}
         >
           Reset
@@ -54,7 +54,7 @@ export default function FiltersPanel({ filters, onFiltersChange }) {
           <select
             value={filters.country}
             onChange={handleCountryChange}
-            className="w-full rounded-2xl border border-slate-700/70 bg-slate-900/70 px-4 py-3.5 text-sm text-gray-100 outline-none transition focus:border-emerald/70 focus:ring-2 focus:ring-emerald/30"
+            className="w-full rounded-2xl border border-slate-700/70 bg-slate-900/70 px-4 py-3.5 text-sm text-gray-100 outline-none transition focus:border-azure/70 focus:ring-2 focus:ring-azure/30"
           >
             <option value="">All countries</option>
             {teamDatabase.map((entry) => (
@@ -76,12 +76,12 @@ export default function FiltersPanel({ filters, onFiltersChange }) {
                   const isChecked = selectedLeagues.includes(league.name);
                   return (
                     <li key={league.name}>
-                      <label className="flex items-center gap-4 rounded-xl border border-transparent px-4 py-3 transition hover:border-emerald/30 hover:bg-slate-800/50">
+                      <label className="flex items-center gap-4 rounded-xl border border-transparent px-4 py-3 transition hover:border-azure/30 hover:bg-slate-800/50">
                         <input
                           type="checkbox"
                           checked={isChecked}
                           onChange={handleLeagueToggle(league.name)}
-                          className="h-4 w-4 rounded border border-slate-600 bg-slate-900 text-emerald focus:ring-emerald"
+                          className="h-4 w-4 rounded border border-slate-600 bg-slate-900 text-azure focus:ring-azure"
                         />
                         <span className="flex-1 text-gray-100">{league.name}</span>
                         {/*   <span className="text-[11px] uppercase tracking-[0.25em] text-gray-500">{league.level}</span> */}
@@ -95,12 +95,12 @@ export default function FiltersPanel({ filters, onFiltersChange }) {
         </div>
       </div>
 
-      <label className="flex items-start gap-4 rounded-2xl border border-slate-800/80 bg-slate-900/70 px-5 py-4 text-sm text-gray-200 transition hover:border-emerald/40 hover:bg-slate-900/90">
+      <label className="flex items-start gap-4 rounded-2xl border border-slate-800/80 bg-slate-900/70 px-5 py-4 text-sm text-gray-200 transition hover:border-azure/40 hover:bg-slate-900/90">
         <input
           type="checkbox"
           checked={Boolean(filters.sameLeague)}
           onChange={handleSameLeagueChange}
-          className="mt-1 h-4 w-4 rounded border border-slate-600 bg-slate-900 text-emerald focus:ring-emerald"
+          className="mt-1 h-4 w-4 rounded border border-slate-600 bg-slate-900 text-azure focus:ring-azure"
         />
         <span className="space-y-2">
           <span className="block text-[11px] font-semibold uppercase tracking-[0.3em] text-gray-400">Keep managers in the same league</span>
