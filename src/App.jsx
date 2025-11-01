@@ -1,7 +1,6 @@
 import { useMemo, useState } from 'react';
 import Header from './components/Header.jsx';
 import PlayerForm from './components/PlayerForm.jsx';
-import PlayerList from './components/PlayerList.jsx';
 import FiltersPanel from './components/FiltersPanel.jsx';
 import AssignmentResults from './components/AssignmentResults.jsx';
 import HistoryPanel from './components/HistoryPanel.jsx';
@@ -137,12 +136,11 @@ export default function App() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 pb-16 pt-12 flex-1">
         <Header />
 
-        <section className="grid gap-6 lg:grid-cols-3">
-          <div className="lg:col-span-2 space-y-4">
-            <PlayerForm onAddPlayer={addPlayer} />
-            <PlayerList players={players} onRemove={removePlayer} />
+        <section className="space-y-6">
+          <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch">
+            <PlayerForm players={players} onAddPlayer={addPlayer} onRemovePlayer={removePlayer} />
+            <FiltersPanel filters={filters} onFiltersChange={setFilters} />
           </div>
-          <FiltersPanel filters={filters} onFiltersChange={setFilters} />
         </section>
 
         <AssignmentResults
