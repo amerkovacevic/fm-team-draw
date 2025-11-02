@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
 import PlayerForm from './components/PlayerForm.jsx';
 import FiltersPanel from './components/FiltersPanel.jsx';
 import AssignmentResults from './components/AssignmentResults.jsx';
@@ -153,9 +154,7 @@ export default function App() {
 
         <HistoryPanel history={history} source={source} />
       </div>
-      <footer className="border-t border-tertiary-500/30 bg-primary-800/80 py-4 text-center text-xs text-quaternary-500">
-        <p>&copy; {new Date().getFullYear()} Amer Kovacevic All rights reserved.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
