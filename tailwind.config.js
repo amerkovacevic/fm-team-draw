@@ -1,4 +1,4 @@
-import { tailwindColors } from '../shared-design-tokens.js';
+import { tailwindColors, tailwindFonts } from '../shared-design-tokens.js';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -13,10 +13,7 @@ export default {
         azure: tailwindColors.tertiary[500],
         sand: tailwindColors.warning[300],
       },
-      fontFamily: {
-        display: ['"Bebas Neue"', 'cursive'],
-        sans: ['"Inter"', 'system-ui', 'sans-serif'],
-      },
+      fontFamily: tailwindFonts,
       boxShadow: {
         glow: '0 10px 30px rgba(65, 90, 119, 0.35)', // Using tertiary-500 RGB
       },
