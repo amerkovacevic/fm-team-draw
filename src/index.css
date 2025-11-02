@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-midnight text-gray-100 font-sans;
+  @apply bg-primary-800 text-accent-50 font-sans;
 }
 
 ::-webkit-scrollbar {
@@ -11,10 +11,10 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: theme('colors.pitch');
+  background: theme('colors.secondary.700');
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: theme('colors.azure');
+  background-color: theme('colors.tertiary.500');
   border-radius: 9999px;
 }

@@ -132,7 +132,7 @@ export default function App() {
   }, [players.length, availableTeams.length]);
 
   return (
-    <div className="min-h-screen bg-midnight flex flex-col">
+    <div className="min-h-screen bg-primary-800 flex flex-col">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 pb-16 pt-12 flex-1">
         <Header />
 
@@ -153,7 +153,7 @@ export default function App() {
 
         <HistoryPanel history={history} source={source} />
       </div>
-      <footer className="border-t border-slate-800 bg-slate-900/80 py-4 text-center text-xs text-slate-500">
+      <footer className="border-t border-tertiary-500/30 bg-primary-800/80 py-4 text-center text-xs text-quaternary-500">
         <p>&copy; {new Date().getFullYear()} Amer Kovacevic All rights reserved.</p>
       </footer>
     </div>

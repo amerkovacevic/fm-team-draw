@@ -1,7 +1,7 @@
 export default function PlayerList({ players, onRemove }) {
   if (!players.length) {
     return (
-      <div className="rounded-2xl border border-dashed border-slate-700 bg-slate-850/60 p-6 text-center text-sm text-gray-400">
+      <div className="rounded-2xl border border-dashed border-tertiary-600 bg-secondary-700/60 p-6 text-center text-sm text-quaternary-400">
         No managers added yet. Add yourself or your friends to start the draw.
       </div>
     );
@@ -12,16 +12,16 @@ export default function PlayerList({ players, onRemove }) {
       {players.map((player) => (
         <li
           key={player.id}
-          className="flex items-center justify-between rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/70 to-pitch/70 px-4 py-3 text-sm"
+          className="flex items-center justify-between rounded-2xl border border-tertiary-500/30 bg-gradient-to-br from-secondary-700/70 to-secondary-700/70 px-4 py-3 text-sm"
         >
           <div>
-            <p className="font-semibold text-white">{player.name}</p>
-            <p className="text-xs text-gray-400">Ready for a new project</p>
+            <p className="font-semibold text-accent-50">{player.name}</p>
+            <p className="text-xs text-quaternary-400">Ready for a new project</p>
           </div>
           <button
             type="button"
             onClick={() => onRemove(player.id)}
-            className="rounded-full border border-slate-700 px-3 py-1 text-xs uppercase tracking-widest text-gray-400 transition hover:border-red-500 hover:text-red-300"
+            className="rounded-full border border-tertiary-600 px-3 py-1 text-xs uppercase tracking-widest text-quaternary-400 transition hover:border-warning-500 hover:text-warning-300 active:border-warning-500 active:text-warning-300 touch-manipulation"
           >
             Remove
           </button>
