@@ -33,7 +33,7 @@ export default function FiltersPanel({ filters, onFiltersChange }) {
   };
 
   return (
-    <section className="flex h-full flex-col gap-6 rounded-[28px] border border-tertiary-500/30 bg-gradient-to-br from-secondary-700/85 via-secondary-700 to-primary-800/80 p-8 shadow-[0_18px_45px_-30px_rgba(65,90,119,0.55)]">
+    <section className="flex h-full flex-col gap-6 rounded-[28px] border border-tertiary-500/30 bg-gradient-to-br from-secondary-700/85 via-secondary-700 to-primary-800/80 p-8">
       <header className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         <div className="space-y-1">
           <p className="text-[11px] uppercase tracking-[0.35em] text-tertiary-400/80">Filters</p>

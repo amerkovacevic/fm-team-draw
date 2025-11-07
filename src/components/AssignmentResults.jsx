@@ -14,7 +14,7 @@ export default function AssignmentResults({ assignments, onRandomize, loading, c
           onClick={onRandomize}
           className={clsx(
             'rounded-xl px-6 py-3 text-sm font-semibold uppercase tracking-widest transition touch-manipulation',
-            'bg-tertiary-500 text-accent-50 shadow-glow hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0',
+            'bg-tertiary-500 text-accent-50 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0',
             (!canRandomize || loading) && 'cursor-not-allowed bg-tertiary-500/40 text-accent-50/60 shadow-none'
           )}
         >

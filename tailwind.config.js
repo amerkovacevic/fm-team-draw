@@ -15,9 +15,6 @@ export default {
         azure: tailwindColors.tertiary[500],
         sand: tailwindColors.warning[300],
       },
-      boxShadow: {
-        glow: '0 10px 30px rgba(65, 90, 119, 0.35)', // Using tertiary-500 RGB
-      },
     },
   },
   plugins: [],

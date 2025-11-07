@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="relative overflow-hidden rounded-3xl border border-tertiary-500/30 bg-secondary-700 p-8 shadow-glow">
+    <header className="relative overflow-hidden rounded-3xl border border-tertiary-500/30 bg-secondary-700 p-8">
       <div className="relative z-10 flex flex-col gap-3 text-center sm:text-left">
         <span className="text-sm uppercase tracking-[0.4em] text-tertiary-400">Squad Builder</span>
         <h1 className="font-display text-4xl tracking-wide text-accent-50 drop-shadow sm:text-5xl">
