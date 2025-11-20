@@ -133,7 +133,7 @@ export default function App() {
   }, [players.length, availableTeams.length]);
 
   return (
-    <div className="min-h-screen bg-primary-800 flex flex-col">
+    <div className="min-h-screen bg-accent-50 flex flex-col">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 pb-16 pt-12 flex-1">
         <Header />
 
